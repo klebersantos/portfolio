@@ -1,0 +1,161 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto+Slab:400,700&display=swap");
+* {
+  font-family: 'Roboto Slab', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+h1 {
+  color: #000;
+  font-weight: 300;
+  width: 100%;
+  position: relative;
+  text-align: center;
+  padding: 45px 0 0;
+}
+
+h1 small {
+  font-size: 18px;
+  display: block;
+  text-transform: uppercase;
+}
+
+h1::before {
+  background: #f3f3f3;
+  width: 300px;
+  height: 300px;
+  content: "";
+  display: block;
+  position: absolute;
+  left: -159px;
+  top: -159px;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+  z-index: -1;
+}
+
+h1::after {
+  background: #f3f3f3;
+  width: 300px;
+  height: 300px;
+  content: "";
+  display: block;
+  position: absolute;
+  right: -159px;
+  top: -159px;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+
+@media (max-width: 992px) {
+  h1::after {
+    display: none;
+  }
+}
+
+.projetos {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 100%;
+  margin: 50px auto;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.projetos h2 {
+  color: #313030;
+  text-align: center;
+  font-size: 15px;
+  margin-bottom: 50px;
+}
+
+.projetos ul {
+  height: 100%;
+  list-style: none;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  max-width: 90%;
+}
+
+.projetos ul li {
+  margin: 1% 2%;
+  width: 46%;
+}
+
+@media (max-width: 992px) {
+  .projetos ul li {
+    width: 100%;
+  }
+}
+
+.projetos ul li a {
+  color: #313030;
+  font-weight: normal;
+  text-decoration: none;
+  font-size: 18px;
+  padding: 25px;
+  display: block;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  background: #fff;
+  -webkit-box-shadow: 0 0px 46px rgba(210, 207, 207, 0.580392);
+          box-shadow: 0 0px 46px rgba(210, 207, 207, 0.580392);
+  border-radius: 4px;
+}
+
+.projetos ul li a:hover {
+  color: #000;
+  -webkit-box-shadow: 0 0px 46px rgba(92, 91, 91, 0.58);
+          box-shadow: 0 0px 46px rgba(92, 91, 91, 0.58);
+}
+
+.lk {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 0 auto;
+  width: 80px;
+  height: 80px;
+  border: 1px solid #0073b1;
+  margin-bottom: 100px;
+  border-radius: 50%;
+  font-size: 40px;
+  text-align: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-decoration: none;
+  color: #0073b1;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.lk:hover {
+  border: 1px solid #14adff;
+  color: #14adff;
+}
+/*# sourceMappingURL=estilo.css.map */
