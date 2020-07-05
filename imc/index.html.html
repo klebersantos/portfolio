@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IMC</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="centro">
+    <div class="toggle">
+      <p>Claro/Escuro</p>
+      <input id="switch" type="checkbox" name="theme">
+      <label class="too" for="switch">Toggle</label>
+    </div>
+    <div class="foto">
+      <img src="imagem/img.jpg" alt="">
+    </div>
+    <form class="form" id="form"> 
+      <h1>IMC</h1>
+      <p>Cuide bem da sua saúde.</p>
+      <div class="campos">
+        <div class="inpt">
+          <label class="labs">Peso (kg)</label>
+          <input id="input" required type="text" class="peso " placeholder="Digite seu peso" name="peso">
+        </div>
+        <div class="inpt">
+          <label class="labs">Altura (cm)</label>
+          <input id="input2" required type="text" class="altura " placeholder="Ex: 1.80" name="altura">
+        </div>
+      </div>
+      <button type="submit" class="btn" id="botao">Calcular</button>
+      <span id="total" class="total"></span>
+
+            
+      <table id="customers">
+        <tr>
+          <th>IMC</th>
+          <th>Condição</th>
+        </tr>
+        <tr>
+          <td>18,5</td>
+          <td>Baixo peso</td>
+        </tr>
+        <tr>
+          <td>18,5 - 25</td>
+          <td>Peso ideal</td>
+        </tr>
+        <tr>
+          <td>25 - 30</td>
+          <td>Sobrepeso</td>
+        </tr>
+        <tr>
+          <td>30 - 35</td>
+          <td>Obesidade Grau 1</td>
+        </tr>
+        <tr>
+          <td>35 - 40</td>
+          <td>Obesidade Grau 2</td>
+        </tr>
+        <tr>
+          <td>> 40</td>
+          <td>Obesidade Grau 3</td>
+        </tr>
+      
+      </table>
+      
+    </form>
+  </div>
+  <script>
+    const form = document.getElementById('form');
+    form.addEventListener('submit', calcImc);
+
+    function calcImc(event) {
+      event.preventDefault();
+
+      var peso = parseFloat(document.querySelector(".peso").value);
+      var altura = parseFloat(document.querySelector(".altura").value);
+      var total = Math.round(peso /(altura * altura));
+      if(total < 18.5)
+        total += `<br> <span class='laranja'>Baixo peso 😶</span>`;
+      if(total > 18.5 && total < 24.5)
+        total += `<br> <span class='verde'>Peso ideal 🤩</span>`;
+      if(total > 24.5 && total < 29.5)
+        total += `<br> <span class='darkred'>Sobrepeso 😐</span>`;
+      if(total > 29.5 && total < 34.5)
+        total += `<br> <span class='red'>Obesidade Grau 1 😲</span>`;
+      if(total > 34.5 && total < 39.5)
+        total += `<br> <span class='red'>Obesidade Grau 2 🙄</span>`;
+      if(total > 39.5)
+        total += `<br> <span class='red'>Obesidade Grau 3 🤔</span>`;
+        total = "IMC = " + total;
+        document.getElementById("total").innerHTML = total;
+    }
+
+    // 18,5	Baixo peso
+    // 18,5 - 25	Peso ideal
+    // 25 - 30	Sobrepeso
+    // 30 - 35	Obesidade Grau 1
+    // 35 - 40	Obesidade Grau 2
+    // > 40	Obesidade Grau 3
+
+  </script>
+<script src="scripts.js"></script>
+</body>
+</html>
